@@ -26,13 +26,11 @@ function render() {
             card.classList.add("container")
             
     
-    
                 //masukin image
                 let imageContainer = document.createElement("div")
                 imageContainer.classList.add("image")
                 imageContainer.classList.add("container")
-                
-
+                imageContainer.setAttribute("id", id)
         
                 let imageElement = document.createElement("img")
                 imageElement.src = image
@@ -98,3 +96,186 @@ function render() {
     }
 }
 render()
+
+
+let restoCard = document.querySelectorAll(".image.container")
+let clickedRestoName = ''
+let foodHTML = document.getElementById("list-food")
+let drinkHTML = document.getElementById("list-drink")
+let foodContainer = document.getElementById("food-container")
+let drinkContainer = document.getElementById("drink-container")
+
+for (let i = 0 ; i < restoCard.length ; i++) {
+    restoCard[i].addEventListener("click", x => {
+        for (let j = 0 ; j < restaurants.length ; j++) {
+            if (restoCard[i].getAttribute("id") === restaurants[j].id) {
+                clickedRestoName = restaurants[j].name
+                foodHTML.classList.toggle("none")
+                drinkHTML.classList.toggle("none")
+                insertFoodToHTML()
+                insertDrinkToHTML()
+            }
+        }
+    })
+}
+
+
+
+
+
+//masukin food
+function insertFoodToHTML() {
+    for(let i = 0 ; i < foods.length ; i++ ) {
+        for (let j = 0 ; j < foods[i].restaurantName.length ; j++) {
+
+            let foodName = foods[i].name
+            let image = foods[i].imageURL
+            let description = foods[i].description
+            let price = foods[i].price
+            let id = foods[i].id
+
+
+            if (foods[i].restaurantName[j] === clickedRestoName) {
+                //masukin card
+                let card = document.createElement("div")
+                card.classList.add("menu-card")
+                card.classList.add("menu-container")
+
+                    //masukin image container
+                    let imageContainer = document.createElement("div")
+                    imageContainer.classList.add("catalog")
+                    imageContainer.classList.add("container")
+                    imageContainer.setAttribute("id", id)
+
+                        //masukin image ke image container
+                        let imageElement = document.createElement("img")
+                        imageElement.src = image
+                        imageElement.classList.add("catalog-image")
+
+                        //bikin side container
+                        let sideContainer = document.createElement("div")
+                        sideContainer.classList.add("side-container")
+
+                            //bikin ul
+                            let points = document.createElement("ul")
+                            points.classList.add("side-points")
+
+                                //nama makanan
+                                let menuName = document.createElement("li")
+                                menuName.classList.add("catalog-name")
+                                menuName.innerText = foodName
+
+                                //deskripsi makanan
+                                let menuDescription = document.createElement("li")
+                                menuDescription.classList.add("catalog-description")
+                                menuDescription.innerText = description
+
+                                //harga makanan
+                                let menuPrice = document.createElement("li")
+                                menuPrice.classList.add("catalog-price")
+                                menuPrice.innerText = price
+
+                                //button beli
+                                let buttonList = document.createElement("li")
+                                buttonList.classList.add("add-button")
+
+                                    //masukkin button beneran
+                                    let button = document.createElement("button")
+                                    button.innerHTML = `<i class="fa-solid fa-plus"></i>`
+                                    buttonList.appendChild(button)
+
+                                points.appendChild(menuName)
+                                points.appendChild(menuDescription)
+                                points.appendChild(menuPrice)
+                                points.appendChild(buttonList)
+
+                            sideContainer.appendChild(points)
+
+                        imageContainer.appendChild(imageElement)
+                        imageContainer.appendChild(sideContainer)
+                
+                    card.appendChild(imageContainer)
+
+                foodContainer.appendChild(card)
+            }
+        }
+    } 
+}
+
+//masukin drink
+function insertDrinkToHTML() {
+    for(let i = 0 ; i < drinks.length ; i++ ) {
+
+        let drinkName = drinks[i].name
+        let image = drinks[i].imageURL
+        let description = drinks[i].description
+        let price = drinks[i].price
+        let id = drinks[i].id
+
+        for (let j = 0 ; j < drinks[i].restaurantName.length ; j++) {
+            if (drinks[i].restaurantName[j] === clickedRestoName) {
+                //masukin card
+                let card = document.createElement("div")
+                card.classList.add("menu-card")
+                card.classList.add("menu-container")
+
+                    //masukin image container
+                    let imageContainer = document.createElement("div")
+                    imageContainer.classList.add("catalog")
+                    imageContainer.classList.add("container")
+                    imageContainer.setAttribute("id", id)
+
+                        //masukin image ke image container
+                        let imageElement = document.createElement("img")
+                        imageElement.src = image
+                        imageElement.classList.add("catalog-image")
+
+                        //bikin side container
+                        let sideContainer = document.createElement("div")
+                        sideContainer.classList.add("side-container")
+
+                            //bikin ul
+                            let points = document.createElement("ul")
+                            points.classList.add("side-points")
+
+                                //nama minuman
+                                let menuName = document.createElement("li")
+                                menuName.classList.add("catalog-name")
+                                menuName.innerText = drinkName
+
+                                //deskripsi minuman
+                                let menuDescription = document.createElement("li")
+                                menuDescription.classList.add("catalog-description")
+                                menuDescription.innerText = description
+
+                                //harga minuman
+                                let menuPrice = document.createElement("li")
+                                menuPrice.classList.add("catalog-price")
+                                menuPrice.innerText = price
+
+                                //button beli
+                                let buttonList = document.createElement("li")
+                                buttonList.classList.add("add-button")
+
+                                    //masukkin button beneran
+                                    let button = document.createElement("button")
+                                    button.innerHTML = `<i class="fa-solid fa-plus"></i>`
+                                    buttonList.appendChild(button)
+
+                                points.appendChild(menuName)
+                                points.appendChild(menuDescription)
+                                points.appendChild(menuPrice)
+                                points.appendChild(buttonList)
+
+                            sideContainer.appendChild(points)
+
+                        imageContainer.appendChild(imageElement)
+                        imageContainer.appendChild(sideContainer)
+                
+                    card.appendChild(imageContainer)
+
+                drinkContainer.appendChild(card)
+            }
+        }
+    } 
+}
