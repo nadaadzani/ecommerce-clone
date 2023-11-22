@@ -1,0 +1,64 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#list-resto {
+    display: flex;
+}
+.container {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu .container {
+    flex-direction: row;
+}
+
+.card .container {
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 15rem;
+    min-width: 13rem;
+}
+
+.menu-image {
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+li > ul {
+    display: flex;
+    flex-basis: 10px;
+    justify-content: space-between;
+    padding:0;
+}
+
+.nama-resto{
+    height: 46px;
+
+}
+
+.resto-pilihan {
+    font-size: 15px;
+    color: #01B04E;
+}
+
+.nama-resto {
+    font-weight: bold;
+    font-size: 20px
+}
+
+.category, .bottom-card{
+    color: rgb(134, 134, 134);
+}
+
+
+.container .bottom-container {
+    margin:0;
+}
