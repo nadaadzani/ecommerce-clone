@@ -12,42 +12,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <!-- MASUKIN KE HTML UNTUK LIST RESTO -->
-    <!-- <div id ="list-resto" class="container">
-        
-    </div> -->
-    <!-- MASUKIN KE HTML UNTUK LIST MAKANAN -->
-    <!-- <div id ="list-food" class="none">
-        <h1>Makanan</h1>
-        <div id="food-container">
-            
-        </div>
-    </div> -->
-
-    <!-- MASUKIN KE HTML UNTUK LIST MINUMAN -->
-    <!-- <div id ="list-drink" class="none">
-        <h1>Minuman</h1>
-        <div id="drink-container">
-            
-        </div>
-    </div> -->
-
-<!-- PLACEHOLDER CART -->
-<!--     <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count"></p></div>
-    <div class="sidebar">
-        <div class="head"><p>My Cart</p></div>
-        <div id="cartItem"></div>
-        <div class="foot">
-            <h3>Total</h3>
-            <h2 id="total"></h2>
-        </div>
-    </div> -->
-  
     <!-- bagian atas -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
+        <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="#">NomNomNow</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -57,10 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Masuk/Daftar</a>
+                    <a class="nav-link" href="login.html">Masuk/Daftar</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,11 +53,11 @@
         </div>
         <!-- card 1 -->
         <div class="card" style="width: 19rem; height: 19rem; position: absolute; display: flex;top: 13rem; left: 7rem">
-          <div class="card-body">
+          <div class="card-body card-flex">
             <h5 class="card-title">Mau makan apa?</h5>
-            <p class="card-text">cari tempat makan disekitar anda</p>
-            <input type="text">
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">Cari tempat makan di sekitar kamu</p>
+            <input type="text" placeholder="lokasi kamu" id="input-location">
+            <button class="btn btn-primary" id="goSomewhere">Go somewhere</button>
           </div>
         </div>
         <!-- akhir card 1 -->
@@ -99,16 +65,49 @@
         <!-- ant layout -->
         <div class="ant-layout">
           <h1 class="title"><span>Promo makanan di</span>
-          <span class="coloredText">Indonesia</span></h1>
+          <span class="coloredText" id="location-name">Indonesia</span></h1>
         </div>
         <!-- DOM Mar -->
         <div id="list-resto" class="container">
 
         </div>
-  
-        <div class="button">
-          <button type="button" class="btn-showMore"> Lihat lebih banyak </button>
+
+        <!-- MASUKIN KE HTML UNTUK LIST MAKANAN -->
+        <div id ="list-food" class="none">
+            <h1>Makanan</h1>
+            <div id="food-container">
+            
+            </div>
         </div>
+
+        <!-- MASUKIN KE HTML UNTUK LIST MINUMAN -->
+        <div id ="list-drink" class="none">
+            <h1>Minuman</h1>
+            <div id="drink-container">
+            
+            </div>
+        </div>
+        <!-- PLACEHOLDER CART -->
+        <div id="cart-box none">
+    <div class="cart"></div> 
+        <h1 class="cart-title">Keranjang Belanja</h1>
+        <div class="sidebar">
+            <div class="head">
+                <p>My Cart</p>
+                <div class="header-count">
+                    <i class="fa-solid fa-cart-shopping"></i><p id="count"></p>
+                </div>
+            </div>
+            <div id="cartItem"></div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total"></h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="border"></div>
+
         <div class="ant-layout">
           <h1 class="title"><span>Masih kurang? masih banyak pilihan lain nya!</span></h1>
         </div>
@@ -151,6 +150,7 @@
             </div>
         </div>
     </section>
+
     <div class="ft-container">
       <div class="footer2">
           <h2 class="title-iklan">Navbar</h2>
@@ -228,7 +228,23 @@
       </div>
       
     </div>
-  
+
+    <!-- LIHAT LEBIH BANYAK -->
+    <div class="button">
+        <button type="button" class="btn-showMore"> Lihat lebih banyak </button>
+      </div>
+
+        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+          $(document).scroll(function () {
+              var $nav = $("#mainNav");
+              $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+          });
+      });
+  </script>
 </body>
 </html>
+
+<!-- xx -->
