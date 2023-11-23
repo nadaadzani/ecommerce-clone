@@ -4,6 +4,7 @@
 
 #list-resto {
     display: flex;
+    gap: 1rem
 }
 .container {
     display: flex;
@@ -58,11 +59,18 @@ li > ul {
     color: rgb(134, 134, 134);
 }
 
-
 .container .bottom-container {
     margin:0;
 }
 
 .none {
     display: none;
+}
+
+.card .container ul {
+    padding: 0px;
+}
+
+.card .container li {
+    padding: 5px 0px;
 }
