@@ -2,6 +2,21 @@ import restaurants from "./database-restaurants.js"
 import foods from "./database-foods.js"
 import drinks from "./database-drinks.js"
 
+// ========= BUTTON LOKASI =============
+
+let goSomewhere = document.getElementById("goSomewhere")
+let locationName = document.getElementById("location-name")
+
+goSomewhere.addEventListener("click", x => {
+    let valueLocation = document.getElementById("input-location").value
+    if (!valueLocation){
+        locationName.innerHTML = "Indonesia"
+        alert("Isi lokasi kamu!")
+    } else {
+        locationName.innerHTML = valueLocation
+    }
+
+})
 
 // ========= RESTAURANT ================
 function render() {
@@ -146,6 +161,9 @@ let itemCounter = document.getElementById("count")
 let cartItem = document.getElementById("cartItem")
 let totalPrice = document.getElementById("total")
 
+let addToCart = document.getElementById("cart-box")
+
+
 //INSERT FOOD
 function insertFoodToHTML() {
     for(let i = 0 ; i < foods.length ; i++ ) {
@@ -215,7 +233,7 @@ function insertFoodToHTML() {
 
                                         if(cart === 0) {
                                             itemCounter.innerHTML = 0
-                                            cartItem.innerHTML = "Empty Cart"
+                                            cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                         } else {
                                             total += price
                                             itemCounter.innerHTML = cart
@@ -259,7 +277,7 @@ function insertFoodToHTML() {
                                                 itemCounter.innerText = cart
 
                                                 if (itemCounter.innerText === 0) {
-                                                    cartItem.innerHTML = "Empty Cart"
+                                                    cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                                 }
                                             })
 
@@ -313,7 +331,7 @@ function insertDrinkToHTML() {
                 card.classList.add("menu-card")
                 card.classList.add("menu-container")
 
-                    //masukin image container
+                //masukin image container
                     let imageContainer = document.createElement("div")
                     imageContainer.classList.add("catalog")
                     imageContainer.classList.add("container")
@@ -364,7 +382,7 @@ function insertDrinkToHTML() {
 
                                         if(cart === 0) {
                                             itemCounter.innerHTML = 0
-                                            cartItem.innerHTML = "Empty Cart"
+                                            cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                         } else {
                                             total += price
                                             itemCounter.innerHTML = cart
@@ -408,7 +426,7 @@ function insertDrinkToHTML() {
                                                 itemCounter.innerText = cart
 
                                                 if (itemCounter.innerText === 0) {
-                                                    cartItem.innerHTML = "Empty Cart"
+                                                    cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                                 }
                                             })
 
@@ -446,5 +464,4 @@ function insertDrinkToHTML() {
 }
 
 
-
-
+// xx
