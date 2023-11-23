@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700&family=Mulish:wght@200;300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+div {
+    position: relative;
+    left: 25%;
+    top: 5rem;
+    /* top: 50%; */
+    width: 50%;
+    height: 400px
+    /* height: 100vh; */
+}
+
+.login-container {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border: 1px solid grey;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+h1 {
+    display: flex;
+    font-size: 22px;
+    margin-left: 10px;
+    font-weight: normal;
+    height: 30px;
+    /* margin-top: 0; */
+    margin-bottom: 6px;
+}
+
+p {
+    display: flex;
+    color: grey;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.form-container {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    /* margin-right: auto; */
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+}
+
+span {
+    align-items: center;
+    padding-left: 5px;
+}
+
+input {
+    margin-left: 10px;
+    width: 16rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input {
+    width: 20px;
+    margin: 16px 0 0 10px;
+    /* align-items: center */
+}
+
+label {
+    font-size: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.continue {
+    width: auto;
+    height: 2rem;
+    margin: 1rem 2rem;
+    background-color: darkgreen;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+    color: #e8e8e8;
+    font-weight: bold;
+}
+
+.continue:hover {
+    scale: 1.05;
+    transition: all 0.25s;
+}
+
+.break {
+    width: auto;
+    margin: 1rem 3rem;
+    border-top: 1px solid grey;
+    position: static;
+    height: 10px;
+}
+
+.continue-g {
+    display: flex;
+    width: auto;
+    margin: 0px 2rem 1rem 1rem;
+    border-radius: 25px;
+    border: 1px solid grey;
+    font-size: 1em;
+    height: 2rem;
+    background-color: white;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+img {
+    width: 16px;
+    height: 16px;
+    /* align-items: center; */
+    /* justify-content: flex-start */
+}
+
