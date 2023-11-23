@@ -75,8 +75,8 @@ let foods = [
     {
         id: 'fo10',
         name: 'Nasi Goreng',
-        description: 20000,
-        price: 'belum pake telur',
+        description: 'belum pake telur',
+        price: 20000,
         restaurantName: ['Warkop 1881','Pecel Ayam Pak Edi'],
         imageURL: 'https://awsimages.detik.net.id/community/media/visual/2023/05/07/resep-nasi-goreng-abang-abang_43.jpeg?w=1200'
     },
@@ -103,6 +103,70 @@ let foods = [
         price: 35000,
         restaurantName: ['Martabak Legenda'],
         imageURL: 'https://sweetrip.id/wp-content/uploads/2021/12/liantojw_culinary_95716458_154858442706164_5012487350835348505_n.jpg.webp'
+    },
+    {
+        id: 'fo14',
+        name: 'Salmon Sashimi',
+        description: 'fresh salmon',
+        price: 70000,
+        restaurantName: ['Salad Hut'],
+        imageURL: 'https://awsimages.detik.net.id/content/2016/02/15/297/salmoncover.jpg'
+    },
+    {
+        id: 'fo15',
+        name: 'Vegan Salad',
+        description: 'all fresh vegetable',
+        price: 40000,
+        restaurantName: ['Salad Hut'],
+        imageURL: 'https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2021/05/green-vegan-salad-platter-800x1200.jpg'
+    },
+    {
+        id: 'fo16',
+        name: 'Martabak Jagung Manis',
+        description: '',
+        price: 38000,
+        restaurantName: ['Martabak Legenda'],
+        imageURL: 'https://www.tokomesin.com/wp-content/uploads/2017/09/resep-martabak-jagung-keju.jpg'
+    },
+    {
+        id: 'fo17',
+        name: 'Sayur Pecel',
+        description: 'ala madiun (tanpa nasi)',
+        price: 1000,
+        restaurantName: ['Warkop 1881','Pecel Ayam Pak Edi'],
+        imageURL: 'https://asset.kompas.com/crops/6ZwiRohnvHACa6TqkeNG0VvSKiU=/0x2:1000x669/750x500/data/photo/2021/07/06/60e3ef91620b7.jpg'
+    },
+    {
+        id: 'fo18',
+        name: 'Nasi Putih',
+        description: '',
+        price: 5000,
+        restaurantName: ['Warkop 1881','Pecel Ayam Pak Edi'],
+        imageURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Nasi_dibentuk_bulat.jpg/800px-Nasi_dibentuk_bulat.jpg'
+    },
+    {
+        id: 'fo19',
+        name: 'Bubur Ayam Bandung',
+        description: '',
+        price: 12000,
+        restaurantName: ['Warkop 1881'],
+        imageURL: 'https://awsimages.detik.net.id/community/media/visual/2020/07/09/bubur-ayam-bandung_11.jpeg?w=600&q=90'
+    },
+    {
+        id: 'fo20',
+        name: '',
+        description: '',
+        price: 0,
+        restaurantName: [],
+        imageURL: ''
+    },
+    {
+        id: 'fo21',
+        name: '',
+        description: '',
+        price: 0,
+        restaurantName: [],
+        imageURL: ''
     }
 ]
 
