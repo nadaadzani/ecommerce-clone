@@ -4,7 +4,11 @@ body {
     padding : 0
   }
   
-  .banner img {
+  .logoBoss {
+    color: red;
+  }
+  
+  .banner .card img {
     background-repeat: no-repeat;
     /* background-size: cover; */
     background-color: rgb(216, 216, 243);
@@ -78,4 +82,15 @@ body {
   .col {
     width: 10rem;
     height: 9rem;
+  }
+
+  .footer {
+    width: 100%;
+    height: 36rem;
+    background-color:rgb(218, 216, 216);
+  }
+
+  .borderFoot {
+    border-top: 7px solid rgb(218, 216, 216);
+    margin-top: 1rem;
   }
