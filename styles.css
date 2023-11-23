@@ -237,10 +237,6 @@ a {
     transition: all 0.25s;
 }
 
-.navbar {
-    background-color: #556666;
-}
-
 #navbarNavDropdown {
     justify-content: flex-end;
     margin-right: 10rem;
@@ -368,12 +364,19 @@ span {
 #goSomewhere {
     background-color: #3577b0;
     font-family: 'poppins';
+    justify-content: center;
+    align-items: center;
 }
 
 #goSomewhere:hover {
     scale: 1.02;
     transition: all 0.2s;
 
+}
+
+.card-flex {
+    display: flex;
+    flex-direction: column;
 }
 
 .container ul {
@@ -492,7 +495,12 @@ a {
 }
 
 .navbar {
-    background-color: #556666;
+    background-color: white;
+}
+
+.navbar.scrolled {
+    background: black;
+    transition: all 250ms
 }
 
 #navbarNavDropdown {
@@ -502,6 +510,10 @@ a {
 
 .navbar-brand {
     margin-left: 10rem;
+}
+
+.navbar-brand a {
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-item {
@@ -557,9 +569,8 @@ span {
 .foot{
     display: flex;
     justify-content: space-between;
-    margin: 20px 0px;
+    margin: 30px 0 0 0;
     padding: 10px 0px;
-    border-top: 1px solid #333;
 }
 
 .cart{
@@ -649,5 +660,9 @@ span {
     display: none;
 }
 
+#input-location {
+    width: auto;
+    padding-left: 1rem;
+}
+
 /* xx */
-} */
