@@ -138,7 +138,7 @@ li > ul {
 /* ------ File CSS Faza Start --------*/
 
 body {
-    height: 10000px;
+    height: 2500px;
     margin: 0;
     padding : 0
   }
@@ -239,7 +239,7 @@ span {
   /* ------- File CSS Faza End ------- */
 
 /* =====PLACEHOLDER CART===== */
-.sidebar{
+/* .sidebar{
     width: 40%;
     border-radius: 5px;
     background-color: #eee;
@@ -293,4 +293,4 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
