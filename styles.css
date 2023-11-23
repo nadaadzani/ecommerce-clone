@@ -775,5 +775,13 @@ span {
     object-fit: contain;
 }
 
+.nav-item a {
+    color:black
+}
+
+a:hover {
+    color: rgb(92, 91, 91) !important;
+}
+
 /* xx */
 
