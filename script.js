@@ -43,7 +43,7 @@ function render() {
                         //resto pilihan
                         let restoPilihan = document.createElement("li")
                         restoPilihan.classList.add("resto-pilihan")
-                        restoPilihan.innerHTML=`<i class="fa-solid fa-thumbs-up"></i>&nbsp;restoran pilihan`
+                        restoPilihan.innerHTML=`<i class="fa-solid fa-thumbs-up"></i>&nbsp;Restoran Pilihan`
     
                         //nama resto
                         let namaResto = document.createElement("li")
