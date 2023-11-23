@@ -97,7 +97,7 @@ function render() {
 }
 render()
 
-
+//ADD EVENT LISTENER UNTUK CLICK MAKANAN
 let restoCard = document.querySelectorAll(".image.container")
 let clickedRestoName = ''
 let foodHTML = document.getElementById("list-food")
@@ -112,18 +112,34 @@ for (let i = 0 ; i < restoCard.length ; i++) {
                 clickedRestoName = restaurants[j].name
                 foodHTML.classList.toggle("none")
                 drinkHTML.classList.toggle("none")
-                insertFoodToHTML()
-                insertDrinkToHTML()
+                toggleFoodAndDrink()
+                if(boolean === true){
+                    foodContainer.innerHTML=""
+                    drinkContainer.innerHTML=""
+                } else {
+                    insertFoodToHTML()
+                    insertDrinkToHTML()
+                }
             }
         }
     })
 }
 
+let boolean = true
+
+function toggleFoodAndDrink () {
+    boolean = !boolean
+    console.log(`bolean is now ${boolean}`)  // removable
+}
+
+//NUMBER FORMATTER
+const formatter = new Intl.NumberFormat('ID', {
+    style: 'currency',
+    currency: 'IDR',
+})
 
 
-
-
-//masukin food
+//INSERT FOOD
 function insertFoodToHTML() {
     for(let i = 0 ; i < foods.length ; i++ ) {
         for (let j = 0 ; j < foods[i].restaurantName.length ; j++) {
@@ -131,7 +147,7 @@ function insertFoodToHTML() {
             let foodName = foods[i].name
             let image = foods[i].imageURL
             let description = foods[i].description
-            let price = foods[i].price
+            let price = formatter.format(foods[i].price)
             let id = foods[i].id
 
 
@@ -202,14 +218,14 @@ function insertFoodToHTML() {
     } 
 }
 
-//masukin drink
+//INSERT DRINK
 function insertDrinkToHTML() {
     for(let i = 0 ; i < drinks.length ; i++ ) {
 
         let drinkName = drinks[i].name
         let image = drinks[i].imageURL
         let description = drinks[i].description
-        let price = drinks[i].price
+        let price = formatter.format(drinks[i].price)
         let id = drinks[i].id
 
         for (let j = 0 ; j < drinks[i].restaurantName.length ; j++) {
@@ -279,3 +295,11 @@ function insertDrinkToHTML() {
         }
     } 
 }
+
+
+
+
+
+
+
+
