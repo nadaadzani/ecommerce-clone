@@ -125,11 +125,12 @@ for (let i = 0 ; i < restoCard.length ; i++) {
     })
 }
 
+
+
 let boolean = true
 
 function toggleFoodAndDrink () {
     boolean = !boolean
-    console.log(`bolean is now ${boolean}`)  // removable
 }
 
 //NUMBER FORMATTER
@@ -138,6 +139,12 @@ const formatter = new Intl.NumberFormat('ID', {
     currency: 'IDR',
 })
 
+//BUAT ADD TO CART
+let cart = 0
+let total = 0
+let itemCounter = document.getElementById("count")
+let cartItem = document.getElementById("cartItem")
+let totalPrice = document.getElementById("total")
 
 //INSERT FOOD
 function insertFoodToHTML() {
@@ -147,7 +154,7 @@ function insertFoodToHTML() {
             let foodName = foods[i].name
             let image = foods[i].imageURL
             let description = foods[i].description
-            let price = formatter.format(foods[i].price)
+            let price = foods[i].price
             let id = foods[i].id
 
 
@@ -161,7 +168,6 @@ function insertFoodToHTML() {
                     let imageContainer = document.createElement("div")
                     imageContainer.classList.add("catalog")
                     imageContainer.classList.add("container")
-                    imageContainer.setAttribute("id", id)
 
                         //masukin image ke image container
                         let imageElement = document.createElement("img")
@@ -189,16 +195,88 @@ function insertFoodToHTML() {
                                 //harga makanan
                                 let menuPrice = document.createElement("li")
                                 menuPrice.classList.add("catalog-price")
-                                menuPrice.innerText = price
+                                menuPrice.innerText = formatter.format(price)
 
                                 //button beli
                                 let buttonList = document.createElement("li")
                                 buttonList.classList.add("add-button")
-
+                                    
                                     //masukkin button beneran
-                                    let button = document.createElement("button")
-                                    button.innerHTML = `<i class="fa-solid fa-plus"></i>`
-                                    buttonList.appendChild(button)
+                                    let buttonAdd = document.createElement("button")
+                                    buttonAdd.innerHTML = `<i class="fa-solid fa-plus"></i>`
+                                    buttonAdd.setAttribute("id", id)
+                                    buttonAdd.classList.add("add-to-cart")
+                                    buttonList.appendChild(buttonAdd)
+
+                                    //add event listener
+
+                                    buttonAdd.addEventListener("click", x => {
+                                        cart ++
+
+                                        if(cart === 0) {
+                                            itemCounter.innerHTML = 0
+                                            cartItem.innerHTML = "Empty Cart"
+                                        } else {
+                                            total += price
+                                            itemCounter.innerHTML = cart
+                                            totalPrice.innerHTML = formatter.format(total)
+
+                                            //kotaknya
+                                            let cardItem = document.createElement("div")
+                                            cardItem.classList.add("card-item")
+
+                                            //image divnya
+                                            let imageCard = document.createElement("div")
+                                            imageCard.classList.add("row-img")
+
+                                            //image
+                                            let picture = document.createElement("picture")
+                                            picture.setAttribute("src", image)
+                                            picture.classList.add("rowimg")
+
+                                            //nama
+                                            let checkoutName = document.createElement("p")
+                                            checkoutName.innerHTML = foodName
+                                            checkoutName.classList.add("checkout-name")
+
+                                            //price
+                                            let checkoutPrice = document.createElement("h2")
+                                            checkoutPrice.innerHTML = formatter.format(price)
+                                            checkoutPrice.classList.add("checkout-price")
+
+                                            //remove button
+                                            let removeButton = document.createElement("button")
+                                            removeButton.innerText = "delete"
+                                            removeButton.classList.add("remove-button")
+
+                                            removeButton.addEventListener("click", x => {
+                                                cart --
+                                                total -= price
+
+                                                cartItem.removeChild(cardItem)
+
+                                                totalPrice.innerText = formatter.format(total)
+                                                itemCounter.innerText = cart
+
+                                                if (itemCounter.innerText === 0) {
+                                                    cartItem.innerHTML = "Empty Cart"
+                                                }
+                                            })
+
+
+
+                                            imageCard.appendChild(picture)
+
+                                            cardItem.appendChild(imageCard)
+                                            cardItem.appendChild(checkoutName)
+                                            cardItem.appendChild(checkoutPrice)
+                                            cardItem.appendChild(removeButton)
+
+                                            cartItem.appendChild(cardItem)
+                                            
+                                        }
+                                    })
+                                    
 
                                 points.appendChild(menuName)
                                 points.appendChild(menuDescription)
@@ -225,7 +303,7 @@ function insertDrinkToHTML() {
         let drinkName = drinks[i].name
         let image = drinks[i].imageURL
         let description = drinks[i].description
-        let price = formatter.format(drinks[i].price)
+        let price = drinks[i].price
         let id = drinks[i].id
 
         for (let j = 0 ; j < drinks[i].restaurantName.length ; j++) {
@@ -239,7 +317,6 @@ function insertDrinkToHTML() {
                     let imageContainer = document.createElement("div")
                     imageContainer.classList.add("catalog")
                     imageContainer.classList.add("container")
-                    imageContainer.setAttribute("id", id)
 
                         //masukin image ke image container
                         let imageElement = document.createElement("img")
@@ -267,16 +344,87 @@ function insertDrinkToHTML() {
                                 //harga minuman
                                 let menuPrice = document.createElement("li")
                                 menuPrice.classList.add("catalog-price")
-                                menuPrice.innerText = price
+                                menuPrice.innerText = formatter.format(price)
 
                                 //button beli
                                 let buttonList = document.createElement("li")
                                 buttonList.classList.add("add-button")
 
                                     //masukkin button beneran
-                                    let button = document.createElement("button")
-                                    button.innerHTML = `<i class="fa-solid fa-plus"></i>`
-                                    buttonList.appendChild(button)
+                                    let buttonAdd = document.createElement("button")
+                                    buttonAdd.innerHTML = `<i class="fa-solid fa-plus"></i>`
+                                    buttonAdd.setAttribute("id", id)
+                                    buttonAdd.classList.add("add-to-cart")
+                                    buttonList.appendChild(buttonAdd)
+
+                                    //add event listener
+
+                                    buttonAdd.addEventListener("click", x => {
+                                        cart ++
+
+                                        if(cart === 0) {
+                                            itemCounter.innerHTML = 0
+                                            cartItem.innerHTML = "Empty Cart"
+                                        } else {
+                                            total += price
+                                            itemCounter.innerHTML = cart
+                                            totalPrice.innerHTML = formatter.format(total)
+
+                                            //kotaknya
+                                            let cardItem = document.createElement("div")
+                                            cardItem.classList.add("card-item")
+
+                                            //image divnya
+                                            let imageCard = document.createElement("div")
+                                            imageCard.classList.add("row-img")
+
+                                            //image
+                                            let picture = document.createElement("picture")
+                                            picture.setAttribute("src", image)
+                                            picture.classList.add("rowimg")
+
+                                            //nama
+                                            let checkoutName = document.createElement("p")
+                                            checkoutName.innerHTML = drinkName
+                                            checkoutName.classList.add("checkout-name")
+
+                                            //price
+                                            let checkoutPrice = document.createElement("h2")
+                                            checkoutPrice.innerHTML = formatter.format(price)
+                                            checkoutPrice.classList.add("checkout-price")
+
+                                            //remove button
+                                            let removeButton = document.createElement("button")
+                                            removeButton.innerText = "delete"
+                                            removeButton.classList.add("remove-button")
+
+                                            removeButton.addEventListener("click", x => {
+                                                cart --
+                                                total -= price
+
+                                                cartItem.removeChild(cardItem)
+
+                                                totalPrice.innerText = formatter.format(total)
+                                                itemCounter.innerText = cart
+
+                                                if (itemCounter.innerText === 0) {
+                                                    cartItem.innerHTML = "Empty Cart"
+                                                }
+                                            })
+
+
+
+                                            imageCard.appendChild(picture)
+
+                                            cardItem.appendChild(imageCard)
+                                            cardItem.appendChild(checkoutName)
+                                            cardItem.appendChild(checkoutPrice)
+                                            cardItem.appendChild(removeButton)
+
+                                            cartItem.appendChild(cardItem)
+                                            
+                                        }
+                                    })
 
                                 points.appendChild(menuName)
                                 points.appendChild(menuDescription)
@@ -291,14 +439,11 @@ function insertDrinkToHTML() {
                     card.appendChild(imageContainer)
 
                 drinkContainer.appendChild(card)
+                
             }
         }
     } 
 }
-
-
-
-
 
 
 
