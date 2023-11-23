@@ -59,9 +59,12 @@ li > ul {
     color: rgb(134, 134, 134);
 }
 
-
 .container .bottom-container {
     margin:0;
+}
+
+.none {
+    display: none;
 }
 
 .card .container ul {

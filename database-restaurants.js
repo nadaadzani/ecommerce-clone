@@ -44,6 +44,7 @@ let restaurants = [
         isOpen: false,
         imageURL: 'https://awsimages.detik.net.id/community/media/visual/2023/09/07/resep-martabak-manis-teflon_43.jpeg?w=600&q=90'
     }
+    
 ]
 
 export default restaurants
