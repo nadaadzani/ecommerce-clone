@@ -2,6 +2,21 @@ import restaurants from "./database-restaurants.js"
 import foods from "./database-foods.js"
 import drinks from "./database-drinks.js"
 
+// ========= BUTTON LOKASI =============
+
+let goSomewhere = document.getElementById("goSomewhere")
+let locationName = document.getElementById("location-name")
+
+goSomewhere.addEventListener("click", x => {
+    let valueLocation = document.getElementById("input-location").value
+    if (!valueLocation){
+        locationName.innerHTML = "Indonesia"
+        alert("Isi lokasi kamu!")
+    } else {
+        locationName.innerHTML = valueLocation
+    }
+
+})
 
 // ========= RESTAURANT ================
 function render() {
@@ -444,6 +459,11 @@ function insertDrinkToHTML() {
         }
     } 
 }
+
+if (that.el.offsetWidth && that.el.offsetHeight) {
+    that.el.setAttribute('width', that.el.offsetWidth);
+    that.el.setAttribute('height', that.el.offsetHeight);
+    }
 
 
 

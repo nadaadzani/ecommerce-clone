@@ -12,9 +12,9 @@ let drinks = [
         id: 'dr2',
         name: 'Teh',
         description: 'tawar atau manis, panas atau dingin (tulis di notes)',
-        price: '6_500',
+        price: '6500',
         restaurantName: ['Warkop 1881','Pecel Ayam Pak Edi'],
-        imageURL: ''
+        imageURL: 'https://asset.kompas.com/crops/toOljW__-UqEVhGAJe8UyPdZWnU=/92x67:892x600/750x500/data/photo/2023/08/23/64e59deb79bfb.jpg'
     },
     {
         id: 'dr3',
