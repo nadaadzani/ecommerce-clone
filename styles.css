@@ -158,7 +158,6 @@ li > ul {
 /* ------ File CSS Faza Start --------*/
 
 body {
-    height: 10000px;
     margin: 0;
     padding : 0
   }
@@ -489,8 +488,8 @@ a {
 }
   
 .btn-showMore:hover {
-    color: green;
-    border-color: green;
+    color: rgb(26, 240, 26);
+    border-color:rgb(26, 240, 26);
     transition: all 0.25s;
 }
 
@@ -523,6 +522,104 @@ a {
 span {
     font-family: 'Poppins', sans-serif;
 }
+
+
+
+.foot-container {
+    background-color: rgb(34, 34, 52);
+}
+
+.iklan {
+    margin-left: 7rem;
+    color: white;
+}
+
+.iklan h5 {
+    margin-left: 7rem;
+}
+
+.status {
+    margin-left: 7rem;
+    color: rgb(212, 212, 212);
+    display: flex;
+}
+
+
+
+.judulFooter {
+    margin-left: 7rem;
+    color: rgb(212, 212, 212);
+}
+
+.list-country {
+    margin-left: 4.7%;
+    display: flex;
+    justify-content: flex-start;
+}
+.border3 {
+    border-style: solid;
+    margin-right: 7rem;
+    margin-bottom: 2rem;
+    opacity: 20%;
+}
+.list-QnA {
+    margin-left: -16rem;
+}
+.list-QnA h5 ul{
+    display: flex;
+}
+.list-QnA h5 ul li {
+    margin-left: 14rem;
+}
+
+.list-country li {
+    margin-left: 9px;
+    color: white;
+}
+
+.list-country li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sosmedIcon ul {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 7rem;
+}
+
+.sosmedIcon ul li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+}
+.footer2 {
+    background-color: rgb(228, 228, 228);
+
+}
+
+.footer2 .title-iklan {
+    margin-left: 7rem;
+    margin-top: 4rem;
+}
+
+
+.QnA-card .QnA-card1{
+    margin-left: -16rem;
+    /* margin-bottom: 3rem; */
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.container-fluid .navbar-brand {
+    color: white;
+}
+
+.navbar-nav .nav-item :hover {
+    color: white;
+}
+
   /* ------- File CSS Faza End ------- */
 
 /* =====PLACEHOLDER CART===== */
@@ -666,3 +763,4 @@ span {
 }
 
 /* xx */
+
