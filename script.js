@@ -161,6 +161,9 @@ let itemCounter = document.getElementById("count")
 let cartItem = document.getElementById("cartItem")
 let totalPrice = document.getElementById("total")
 
+let addToCart = document.getElementById("cart-box")
+
+
 //INSERT FOOD
 function insertFoodToHTML() {
     for(let i = 0 ; i < foods.length ; i++ ) {
@@ -230,7 +233,7 @@ function insertFoodToHTML() {
 
                                         if(cart === 0) {
                                             itemCounter.innerHTML = 0
-                                            cartItem.innerHTML = "Empty Cart"
+                                            cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                         } else {
                                             total += price
                                             itemCounter.innerHTML = cart
@@ -274,7 +277,7 @@ function insertFoodToHTML() {
                                                 itemCounter.innerText = cart
 
                                                 if (itemCounter.innerText === 0) {
-                                                    cartItem.innerHTML = "Empty Cart"
+                                                    cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                                 }
                                             })
 
@@ -328,7 +331,7 @@ function insertDrinkToHTML() {
                 card.classList.add("menu-card")
                 card.classList.add("menu-container")
 
-                    //masukin image container
+                //masukin image container
                     let imageContainer = document.createElement("div")
                     imageContainer.classList.add("catalog")
                     imageContainer.classList.add("container")
@@ -379,7 +382,7 @@ function insertDrinkToHTML() {
 
                                         if(cart === 0) {
                                             itemCounter.innerHTML = 0
-                                            cartItem.innerHTML = "Empty Cart"
+                                            cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                         } else {
                                             total += price
                                             itemCounter.innerHTML = cart
@@ -423,7 +426,7 @@ function insertDrinkToHTML() {
                                                 itemCounter.innerText = cart
 
                                                 if (itemCounter.innerText === 0) {
-                                                    cartItem.innerHTML = "Empty Cart"
+                                                    cartItem.innerHTML = "<h1>Empty Cart</h1>"
                                                 }
                                             })
 
@@ -459,12 +462,5 @@ function insertDrinkToHTML() {
         }
     } 
 }
-
-if (that.el.offsetWidth && that.el.offsetHeight) {
-    that.el.setAttribute('width', that.el.offsetWidth);
-    that.el.setAttribute('height', that.el.offsetHeight);
-    }
-
-
 
 
